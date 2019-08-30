@@ -40,6 +40,8 @@ while True:
         cnt += 1
         continue
 
+print("파일을 선택하세요!")
+
 root = Tk()
 root.filename = filedialog.askopenfilename(
     initialdir="/",
