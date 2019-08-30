@@ -37,7 +37,6 @@ while True:
         break
     else:
         print("%s 말고 엔터를 누르세요" % (text))
-        cnt += 1
         continue
 
 print("파일을 선택하세요!")
@@ -48,6 +47,8 @@ root.filename = filedialog.askopenfilename(
     title="파일을 선택하세요",
     filetypes=(("Microsoft Excel Files", ".xlsx"), ("all files", "*.*")))
 
+
+print("로딩중...")
 
 out = open("jamak.sbv", "w", encoding='utf8')
 sub_ = xl.load_workbook(root.filename)
@@ -68,6 +69,8 @@ for i in range(5, row_cnt, 2):
 
     time_list.append(start_time + '0,' + end_time + '0\n')
 
+print("로딩중...")
+
 
 for i in range(6, row_cnt, 2):
     r = rows[i]
@@ -87,6 +90,10 @@ for time in time_list:
     except IndexError as e:
         break
     cnt += 1
+
+
+print("로딩중...")
+
 
 out.close()
 print("\n\n변환 완료!")
